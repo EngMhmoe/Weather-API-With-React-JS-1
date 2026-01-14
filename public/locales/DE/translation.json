@@ -1,0 +1,43 @@
+{
+    "Riyadh": "Riad",
+    "Medina": "Medina",
+
+    "Egypt": "Ägypten",
+    "Morocco": "Marokko",
+    "Portugal": "Portugal",
+    "Brazil": "Brasilien",
+    "France": "Frankreich",
+    "Germany": "Deutschland",
+
+
+
+
+    "Selector": "Stadt auswählen",
+
+
+
+
+    
+    "clear sky": "Klarer Himmel",
+    "few clouds": "Wenige Wolken",
+    "scattered clouds": "Aufgelockerte Bewölkung",
+    "broken clouds" : "Vereinzelte Wolken",
+    "shower rain": "Regenschauer",
+    "rain": "Regen",
+    "thunderstorm": "Gewitter",
+    "snow": "Schnee",
+    "mist": "Nebel",
+    "overcast clouds": "Bedeckter Himmels",
+    
+    
+
+    "min": "Min",
+    "max": "Max",
+"Tuesday, January 13, 2026": "Dienstag, 13. Januar 2026",
+
+
+
+
+
+    "Al Madīnah al Munawwarah": "Medina"
+}
