@@ -1,15 +1,47 @@
+// ==========================================================
+// Start Import MUI
+// ==========================================================
+
 import Box from "@mui/material/Box";
+
 import TextField from "@mui/material/TextField";
+
 import Autocomplete from "@mui/material/Autocomplete";
+
+// ==========================================================
+// End Import MUI
+
+// ==========================================================
+// Start Import Translation
+// ==========================================================
+
 import { useTranslation } from "react-i18next";
 
-// From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
+// ==========================================================
+// End Import Translation
+
+// ==========================================================
+// Start Countries
+// ==========================================================
+
 const countries = [
-  { code: "EG", label: "Arabic", phone: "20" },
+  {
+    code: "EG",
+    label: "Arabic",
+    phone: "20",
+  },
 
-  { code: "PT", label: "Portuguese", phone: "351" },
+  {
+    code: "PT",
+    label: "Portuguese",
+    phone: "351",
+  },
 
-  { code: "ES", label: "Spanish", phone: "34" },
+  {
+    code: "ES",
+    label: "Spanish",
+    phone: "34",
+  },
 
   {
     code: "DE",
@@ -33,46 +65,108 @@ const countries = [
   },
 ];
 
+// ==========================================================
+// End Countries
+
+// ==========================================================
+// Start Component Change Language
+// ==========================================================
+
 export default function ChangeLanguage({ setDirection }) {
-  //hook i18next with useTranslation
+  // ==========================================================
+  // Start Translation Hook
+  // ==========================================================
+
   const { i18n } = useTranslation();
+
+  // ==========================================================
+  // End Translation Hook
+
+  // ==========================================================
+  // Start Click Change Language
+  // ==========================================================
 
   function click(changeCode) {
     if (changeCode === "EG" || changeCode === "SA") {
       i18n.changeLanguage("ar");
+
       setDirection("rtl");
     } else if (changeCode === "US") {
       i18n.changeLanguage("en");
+
       setDirection("ltr");
     } else if (changeCode === "PT") {
       i18n.changeLanguage("pt");
+
       setDirection("ltr");
     } else if (changeCode === "ES") {
       i18n.changeLanguage("ES");
+
       setDirection("ltr");
     } else if (changeCode === "DE") {
       i18n.changeLanguage("DE");
+
       setDirection("ltr");
     } else if (changeCode === "FR") {
       i18n.changeLanguage("FR");
+
       setDirection("ltr");
     }
   }
+
+  // ==========================================================
+  // End Click Change Language
+
   return (
     <Autocomplete
       id="country-select-demo"
-      sx={{ width: 300 }}
       options={countries}
       autoHighlight
+      sx={{
+        width: {
+          xs: 250,
+          sm: 300,
+        },
+
+        "& .MuiOutlinedInput-root": {
+          backgroundColor: "var(--bg-input)",
+
+          color: "var(--text-primary)",
+
+          borderRadius: "14px",
+        },
+
+        "& .MuiOutlinedInput-notchedOutline": {
+          borderColor: "var(--border-color)",
+        },
+
+        "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+          borderColor: "var(--accent-primary)",
+        },
+
+        "& .MuiInputLabel-root": {
+          color: "var(--text-secondary)",
+        },
+
+        "& .MuiInputLabel-root.Mui-focused": {
+          color: "var(--accent-primary)",
+        },
+      }}
       getOptionLabel={(option) => option.label}
       renderOption={(props, option) => {
         const { key, ...optionProps } = props;
+
         return (
           <div onClick={() => click(option.code)}>
             <Box
               key={key}
               component="li"
-              sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
+              sx={{
+                "& > img": {
+                  mr: 2,
+                  flexShrink: 0,
+                },
+              }}
               {...optionProps}
             >
               <img
@@ -90,11 +184,11 @@ export default function ChangeLanguage({ setDirection }) {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Choose Language a country"
+          label="Choose Language"
           slotProps={{
             htmlInput: {
               ...params.inputProps,
-              autoComplete: "new-password", // disable autocomplete and autofill
+              autoComplete: "new-password",
             },
           }}
         />
@@ -102,3 +196,7 @@ export default function ChangeLanguage({ setDirection }) {
     />
   );
 }
+
+// ==========================================================
+// End Component Change Language
+// ==========================================================

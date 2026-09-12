@@ -1,42 +1,287 @@
-/* ===============================
-Start import Tailwind CSS
-================================== */
+/* ========================================================== */
+/* Start Import Tailwind CSS */
+/* ========================================================== */
+
 @import "tailwindcss";
-/* ===============================
-End import Tailwind CSS
-================================== */
 
-/* ===============================
-=====================================================================
-=====================================================================
-=====================================================================
-=====================================================================
-=====================================================================
-================================== */
+/* ========================================================== */
+/* End Import Tailwind CSS */
 
-/* ===============================
-Start import Fonts 
-================================== */
+/* ========================================================== */
+/* Start Theme 01 - Ocean Blue */
+/* ========================================================== */
+
+/* :root {
+  --bg-main: #07111f;
+
+  --bg-card: #0d1b2a;
+
+  --bg-input: #091522;
+
+  --text-primary: #ffffff;
+
+  --text-secondary: #91a7bd;
+
+  --border-color: #1b334b;
+
+  --shadow-color: rgba(0, 0, 0, 0.45);
+
+  --accent-primary: #38bdf8;
+
+  --accent-secondary: #0ea5e9;
+
+  --accent-soft: rgba(56, 189, 248, 0.12);
+
+  --accent-gradient: linear-gradient(135deg, #38bdf8, #0ea5e9);
+
+  --skeleton-color: #183047;
+} */
+
+/* ========================================================== */
+/* End Theme 01 - Ocean Blue */
+
+/* ========================================================== */
+/* Start Theme 02 - Purple Sky */
+/* ========================================================== */
+
+/* :root {
+  --bg-main: #100d1c;
+
+  --bg-card: #1a1628;
+
+  --bg-input: #130f20;
+
+  --text-primary: #ffffff;
+
+  --text-secondary: #aaa0c2;
+
+  --border-color: #302746;
+
+  --shadow-color: rgba(0, 0, 0, 0.5);
+
+  --accent-primary: #a855f7;
+
+  --accent-secondary: #7c3aed;
+
+  --accent-soft: rgba(168, 85, 247, 0.12);
+
+  --accent-gradient: linear-gradient(135deg, #c084fc, #7c3aed);
+
+  --skeleton-color: #2a2140;
+} */
+
+/* ========================================================== */
+/* End Theme 02 - Purple Sky */
+
+/* ========================================================== */
+/* Start Theme 03 - Emerald Green */
+/* ========================================================== */
+
+:root {
+  --bg-main: #071411;
+
+  --bg-card: #0e211b;
+
+  --bg-input: #091a16;
+
+  --text-primary: #ffffff;
+
+  --text-secondary: #91aaa1;
+
+  --border-color: #1d3930;
+
+  --shadow-color: rgba(0, 0, 0, 0.5);
+
+  --accent-primary: #34d399;
+
+  --accent-secondary: #10b981;
+
+  --accent-soft: rgba(52, 211, 153, 0.12);
+
+  --accent-gradient: linear-gradient(135deg, #34d399, #059669);
+
+  --skeleton-color: #18352c;
+}
+
+/* ========================================================== */
+/* End Theme 03 - Emerald Green */
+
+/* ========================================================== */
+/* Start Theme 04 - Sunset Orange */
+/* ========================================================== */
+
+/* :root {
+  --bg-main: #17100d;
+
+  --bg-card: #241815;
+
+  --bg-input: #1a1210;
+
+  --text-primary: #ffffff;
+
+  --text-secondary: #b7a19a;
+
+  --border-color: #3e2922;
+
+  --shadow-color: rgba(0, 0, 0, 0.5);
+
+  --accent-primary: #fb923c;
+
+  --accent-secondary: #f97316;
+
+  --accent-soft: rgba(251, 146, 60, 0.12);
+
+  --accent-gradient: linear-gradient(135deg, #fb923c, #ea580c);
+
+  --skeleton-color: #3a241b;
+} */
+
+/* ========================================================== */
+/* End Theme 04 - Sunset Orange */
+
+/* ========================================================== */
+/* Start Import Fonts */
+/* ========================================================== */
+
 @font-face {
   font-family: "IBM";
-  src: url("/public/Fonts/IBMPlexSansArabic/IBMPlexSansArabic-Light.ttf");
+
+  src: url("/Fonts/IBMPlexSansArabic/IBMPlexSansArabic-Light.ttf");
+
   font-weight: 400;
 }
 
 @font-face {
   font-family: "IBM";
-  src: url("/public/Fonts/IBMPlexSansArabic/IBMPlexSansArabic-Regular.ttf");
+
+  src: url("/Fonts/IBMPlexSansArabic/IBMPlexSansArabic-Regular.ttf");
+
   font-weight: 500;
 }
 
 @font-face {
   font-family: "IBM";
-  src: url("/public/Fonts/IBMPlexSansArabic/IBMPlexSansArabic-Medium.ttf");
+
+  src: url("/Fonts/IBMPlexSansArabic/IBMPlexSansArabic-Medium.ttf");
+
   font-weight: 600;
 }
-/* ===============================
-End import Fonts 
-================================== */
+
+/* ========================================================== */
+/* End Import Fonts */
+
+/* ========================================================== */
+/* Start Global Styles */
+/* ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+
+  font-family: "IBM", sans-serif;
+
+  background: var(--bg-main);
+
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+
+button,
+select,
+input {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent-primary);
+
+  color: #ffffff;
+}
+
+/* ========================================================== */
+/* End Global Styles */
+
+/* ========================================================== */
+/* Start Scrollbar */
+/* ========================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* ========================================================== */
+/* End Scrollbar */
+
+/* ========================================================== */
+/* Start MUI Customization */
+/* ========================================================== */
+
+.MuiAutocomplete-root .MuiInputBase-root {
+  background: var(--bg-input) !important;
+
+  color: var(--text-primary) !important;
+
+  border-radius: 14px !important;
+}
+
+.MuiAutocomplete-root .MuiOutlinedInput-notchedOutline {
+  border-color: var(--border-color) !important;
+}
+
+.MuiAutocomplete-root
+  .MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
+  border-color: var(--accent-primary) !important;
+}
+
+.MuiAutocomplete-root
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: var(--accent-primary) !important;
+}
+
+.MuiAutocomplete-root .MuiInputLabel-root {
+  color: var(--text-secondary) !important;
+}
+
+.MuiAutocomplete-root .MuiInputLabel-root.Mui-focused {
+  color: var(--accent-primary) !important;
+}
+
+.MuiAutocomplete-root .MuiInputBase-input {
+  color: var(--text-primary) !important;
+}
+
+/* ========================================================== */
+/* End MUI Customization */
+/* End import Fonts  */
+/* ================================== */
 
 /* ===============================
 =====================================================================
@@ -50,6 +295,6 @@ End import Fonts
 Start 
 ================================== */
 
-/* ===============================
-End 
-================================== */
+/* =============================== */
+/* End  */
+/* ==================================  */

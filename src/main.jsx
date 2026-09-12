@@ -1,16 +1,18 @@
-import { createRoot } from "react-dom/client";
-
-//import index css in full Project
-import "./index.css";
-
-import App from "./App.jsx";
 import React from "react";
 
-// import i18n (needs to be bundled ;))
+import { createRoot } from "react-dom/client";
+
+// Import index CSS in full Project
+import "./index.css";
+
+// Import i18n
 import "./i18n";
+
+// Import App Component
+import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
