@@ -1,29 +1,18 @@
-// ==========================================================
+// ========================
 // Start Import MUI
-// ==========================================================
-
+// ========================
 import Box from "@mui/material/Box";
-
 import TextField from "@mui/material/TextField";
-
 import Autocomplete from "@mui/material/Autocomplete";
 
-// ==========================================================
-// End Import MUI
-
-// ==========================================================
+// ========================
 // Start Import Translation
-// ==========================================================
-
+// ========================
 import { useTranslation } from "react-i18next";
 
-// ==========================================================
-// End Import Translation
-
-// ==========================================================
-// Start Countries
-// ==========================================================
-
+// ========================
+// Start Data Countries
+// ========================
 const countries = [
   {
     code: "EG",
@@ -65,27 +54,11 @@ const countries = [
   },
 ];
 
-// ==========================================================
-// End Countries
-
-// ==========================================================
-// Start Component Change Language
-// ==========================================================
-
 export default function ChangeLanguage({ setDirection }) {
-  // ==========================================================
   // Start Translation Hook
-  // ==========================================================
-
   const { i18n } = useTranslation();
 
-  // ==========================================================
-  // End Translation Hook
-
-  // ==========================================================
   // Start Click Change Language
-  // ==========================================================
-
   function click(changeCode) {
     if (changeCode === "EG" || changeCode === "SA") {
       i18n.changeLanguage("ar");
@@ -113,9 +86,6 @@ export default function ChangeLanguage({ setDirection }) {
       setDirection("ltr");
     }
   }
-
-  // ==========================================================
-  // End Click Change Language
 
   return (
     <Autocomplete
@@ -196,7 +166,3 @@ export default function ChangeLanguage({ setDirection }) {
     />
   );
 }
-
-// ==========================================================
-// End Component Change Language
-// ==========================================================

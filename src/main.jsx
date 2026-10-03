@@ -11,8 +11,14 @@ import "./i18n";
 // Import App Component
 import App from "./App.jsx";
 
+//import Redux
+import { Provider } from "react-redux";
+import { store } from "./app/store.js";
+
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
 );
